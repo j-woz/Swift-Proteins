@@ -1,0 +1,50 @@
+
+
+= Swift / Protein Folding Collaboration Scripts
+
+== Installations
+
+=== Theta
+
+==== Login
+
+/home/wozniak/Public/sfw/x86_64/login/swift-t-conda/stc/bin
+
+==== Compute
+
+/projects/Candle_ECP/swift/2018-04-25/stc/bin
+
+== Demos
+
+Use the +run+ scripts to ease use:
+
+----
+$ ./run-theta-login.sh 0-hello.swift
+trace: Hello World
+
+$ ./run-theta-login.sh 1-loop.swift 
+hello: 0
+hello: 3
+hello: 2
+hello: 1
+
+$ ./run-theta-compute.sh 0-hello.swift
+TURBINE-THETA SCRIPT
+NODES=1
+PROCS=2
+PPN=2
+TURBINE_OUTPUT=/gpfs/mira-home/wozniak/proj/Swift-Proteins/demos/output/004
+wrote: /gpfs/mira-home/wozniak/proj/Swift-Proteins/demos/output/004/turbine-theta.sh
+running qsub ...
+Job routed to queue "debug-cache-quad".
+Memory mode set to cache quad for queue debug-cache-quad
+JOB_ID=233810
+----
+
+Note that when running for the compute nodes, the output includes:
+
+. Key node/process counts
+. The output directory for the job, which contains stdout in output.txt
+. The location of the generated scheduler script
+. Output from qsub
+. The job ID
